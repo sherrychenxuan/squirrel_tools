@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from findsquirrels.models import squirrel
 
 class Command(BaseCommand):
     help = 'import squirrel.csv'
@@ -8,4 +9,12 @@ class Command(BaseCommand):
     def handle(self,*args,**kwargs):
         path = kwargs['path']
         print(path)
+
+        p = squirrel(
+                X = 123.1,
+                Y = 456,
+                Unique_Squirrel_ID = 'haha',
+        )
+        p.save()
+        
         
