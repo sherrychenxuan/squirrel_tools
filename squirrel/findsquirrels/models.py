@@ -1,9 +1,10 @@
 from django.db import models
+from django.contrib.gis.db.models import PointField
 from django.utils.translation import gettext as _
 
 # Create your models here.
 class Squirrel(models.Model):
-    x = modelmodels.DecimalField(
+    x = models.DecimalField(
             decimal_places = 18,
             max_digits = 22,
             help_text = _("Longitude coordinate for squirrel sighting point"),
@@ -107,7 +108,7 @@ class Squirrel(models.Model):
             max_length = 50,
     )
 
-    lat_long = models.PointField()
+    lat_long = PointField()
 
     zip_codes = models.CharField(max_length=10)
 
