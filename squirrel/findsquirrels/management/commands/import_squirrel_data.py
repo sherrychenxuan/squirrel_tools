@@ -1,20 +1,20 @@
 from django.core.management.base import BaseCommand
-from findsquirrels.models import squirrel
+from findsquirrels.models import Squirrel
 
 class Command(BaseCommand):
     help = 'import squirrel.csv'
 
     def add_arguments(self,parser):
-        parser.add_argument('path', type = str, help = 'The path of the csv file')
-    def handle(self,*args,**kwargs):
-        path = kwargs['path']
-        print(path)
+        parser.add_argument('csv_file', type = str)
+    def handle(self,*args,**options):
+        with open(options['csv_file'] as fp:
+            reader = csv.DictReader(fp)
+            data = list(reader)
+        for item in data:
+            p = Squirrel(
 
-        p = squirrel(
-                X = 123.1,
-                Y = 456,
-                Unique_Squirrel_ID = 'haha',
-        )
-        p.save()
-        
-        
+
+
+            )
+            p.save()
+
