@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.gis.db.models import PointField
+#from django.contrib.gis.db.models import PointField
 from django.utils.translation import gettext as _
 
 # Create your models here.
@@ -7,7 +7,7 @@ class Squirrel(models.Model):
     x = models.DecimalField(
             decimal_places = 18,
             max_digits = 22,
-            help_text = _("Longitude coordinate for squirrel sighting point"),
+            help_text = _("Latitude coordinate for squirrel sighting point"),
     )
 
     y = models.DecimalField(
@@ -21,10 +21,10 @@ class Squirrel(models.Model):
             max_length = 30,
     )
 
-    hectare = models.CharField(
-            help_text = _('Id tag'),
-            max_length = 5,
-    )
+   # hectare = models.CharField(
+   #         help_text = _('Id tag'),
+   #         max_length = 5,
+   # )
 
     shift = models.CharField(
             help_text = _('sighting morning or afternoon'),
@@ -36,9 +36,9 @@ class Squirrel(models.Model):
             max_length = 5,
     )
 
-    hectare_squirrel_number = models.IntegerField(
-            help_text = _('number of squirrel sightings'),
-    )
+   # hectare_squirrel_number = models.IntegerField(
+   #         help_text = _('number of squirrel sightings'),
+   # )
 
     age = models.CharField(
             help_text = _('adult or juvenile'),
@@ -49,26 +49,26 @@ class Squirrel(models.Model):
             max_length = 10,
     )
 
-    highlight_fur_color = models.CharField(
-            max_length = 10,
-    )
+   # highlight_fur_color = models.CharField(
+   #         max_length = 10,
+   # )
 
-    combination_of_primary_and = models.CharField(
-            help_text = _('combination of previous two columns'),
-            max_length = 30,
-    )
+   # combination_of_primary_and = models.CharField(
+   #         help_text = _('combination of previous two columns'),
+   #         max_length = 30,
+   # )
 
-    color_notes = models.CharField(
-            max_length = 100,
-    )
+   # color_notes = models.CharField(
+   #         max_length = 100,
+   # )
 
     location = models.CharField(
             max_length = 20,
     )
 
-    above_ground_sighter = models.CharField(
-            max_length = 10,
-    )
+   # above_ground_sighter = models.CharField(
+   #         max_length = 10,
+   # )
 
     specific_location = models.CharField(
             max_length = 100,
@@ -104,21 +104,21 @@ class Squirrel(models.Model):
 
     runs_from = models.BooleanField()
 
-    other_interactions = models.CharField(
-            max_length = 50,
-    )
+   # other_interactions = models.CharField(
+   #         max_length = 50,
+   # )
 
-    lat_long = PointField()
+   # lat_long = PointField()
 
-    zip_codes = models.CharField(max_length=10)
+   # zip_codes = models.CharField(max_length=10)
 
-    community_districts = models.IntegerField()
+   # community_districts = models.IntegerField()
 
-    borough_boundaries = models.IntegerField()
+   # borough_boundaries = models.IntegerField()
 
-    city_council_districts = models.IntegerField()
+   # city_council_districts = models.IntegerField()
 
-    police_precincts = models.IntegerField()
+   # police_precincts = models.IntegerField()
 
     def __str__(self):
-        return self.Unique_Squirrel_ID
+        return self.unique_squirrel_id
