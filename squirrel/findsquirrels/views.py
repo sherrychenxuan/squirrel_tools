@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Squirrel
 
 def map(request):
-	return render(request,'map.html')
+	return render(request,'findsquirrels/map.html')
 
 
     
