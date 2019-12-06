@@ -6,20 +6,12 @@ from .forms import SquirrelForm
 def map(request):
 	return render(request,'findsquirrels/map.html')
 
-def all_squirrels(request):
-    squirrels = Squirrel.objects.all()
-    context = {
-            'squirrels':squirrels,
-    }
-    return render(request,'findsquirrels/sightings.html',context)
 
-def getlocation(request):
-	squirrels = Squirrel.objects.values_list("unique_squirrel_id","y","x")
-	sample=squirrels.sample(1)
+def select_samples(request):
+	squirrels = Squirrel.objects.all()
+	sightings = squirrels[0:50]
 	context = {
-		'id': sample.unqunique_squirrel_id
-		'y':sample.y
-		'x':sample.x 
+		sightings: sightings
 	}
 	return render(request,'findsquirrels/map.html',context)
 
