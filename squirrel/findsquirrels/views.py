@@ -4,7 +4,7 @@ from .models import Squirrel
 from .forms import SquirrelForm
 
 def map(request):
-	return render(request,'map.html')
+	return render(request,'findsquirrels/map.html')
 
 def all_squirrels(request):
     squirrels = Squirrel.objects.all()
