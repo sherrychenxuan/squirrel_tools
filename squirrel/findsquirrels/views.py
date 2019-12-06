@@ -13,4 +13,19 @@ def all_squirrels(request):
     }
     return render(request,'findsquirrels/sightings.html',context)
 
+
+def add_squirrel(request):
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/findsquirrels/sightings')
+    else:
+        form = SquirrelForm()
+
+    context = {
+            'form':form,
+    }
+
+    return render(request,'sightings/add.html',context)
     
