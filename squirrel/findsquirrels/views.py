@@ -4,9 +4,6 @@ from .models import Squirrel
 from .forms import SquirrelForm
 import json
 
-def map(request):
-	return render(request,'findsquirrels/map.html')
-
 
 def select_samples(request):
 	squirrels = Squirrel.objects.all()
