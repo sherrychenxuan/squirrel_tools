@@ -19,6 +19,7 @@ class Squirrel(models.Model):
     unique_squirrel_id = models.CharField(
             help_text = _('Identification tag for each squirrel sightings'),
             max_length = 30,
+            primary_key = True
     )
 
    # hectare = models.CharField(
