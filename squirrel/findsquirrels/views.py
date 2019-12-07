@@ -4,9 +4,6 @@ from .models import Squirrel
 from .forms import SquirrelForm
 import json
 
-def map(request):
-	return render(request,'findsquirrels/map.html')
-
 
 def select_samples(request):
 	squirrels = Squirrel.objects.all()
@@ -75,3 +72,7 @@ def edit_squirrel(request,unique_squirrel_id):
 #           'form':form,
 #   }
 #   return render(request,'sightings/add.html',context)
+
+
+def stats(request):
+	return render(request,'sightings/stats.html')
