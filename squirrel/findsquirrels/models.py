@@ -33,7 +33,7 @@ class Squirrel(models.Model):
 
     date = models.CharField(
             help_text = _('sighting day and month'),
-            max_length = 5,
+            max_length = 10,
     )
 
    # hectare_squirrel_number = models.IntegerField(
@@ -46,7 +46,8 @@ class Squirrel(models.Model):
     )
 
     primary_fur_color = models.CharField(
-            max_length = 10,
+            max_length = 20,
+            help_text = _('Gray,Cinnamon or Black')
     )
 
    # highlight_fur_color = models.CharField(
@@ -64,6 +65,7 @@ class Squirrel(models.Model):
 
     location = models.CharField(
             max_length = 20,
+            help_text = _('Ground Plane or Above Ground')
     )
 
    # above_ground_sighter = models.CharField(
@@ -72,6 +74,7 @@ class Squirrel(models.Model):
 
     specific_location = models.CharField(
             max_length = 100,
+            help_text = _('your commentary')
     )
 
     running = models.BooleanField()
