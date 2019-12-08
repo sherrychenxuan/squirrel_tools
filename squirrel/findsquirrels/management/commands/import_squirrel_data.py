@@ -16,7 +16,7 @@ class Command(BaseCommand):
             reader = csv.DictReader(fp)
             data = list(reader)
         for item in data:
-            p = Squirrel(
+            s = Squirrel(
                 x = item["X"],
                 y = item["Y"],
                 unique_squirrel_id = item["Unique Squirrel ID"],
@@ -54,5 +54,8 @@ class Command(BaseCommand):
                # city_council_districts = item["City Council Districts"],
                # police_precincts = item["Police Precincts"],
             )
-            p.save()
+            s.save()
+        for row in Squirrel.objects.all():
+            if Squirrel.objects.filter(unique_squirrel_id=row.unique_squirrel_id).count() > 1:
+                row.delete()
 
