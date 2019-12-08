@@ -55,4 +55,4 @@ def edit_squirrel(request,unique_squirrel_id):
 
 
 def stats(request):
-	return render(request,'sightings/stats.html')
+    return render(request,'sightings/stats.html')
