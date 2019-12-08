@@ -51,7 +51,9 @@ CTYPE html>
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
         {% for sighting in sightings %}
           var point_lat_lon = [{{ sighting.y }}, {{ sighting.x }}];
-          var marker = L.marker(point_lat_lon).addTo(map);
+          var marker = L.marker(point_lat_lon).addTo(map)
+          .bindPopup("{{sighting.unique_squirrel_id}} <br> {{sighting.age}} <br> 	{{sighting.primary_fur_color}}")
+		  .openPopup();
         {% endfor %}
     </script>
   </body>

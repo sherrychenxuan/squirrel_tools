@@ -1,0 +1,140 @@
+nguages are the valuable treasure of human beings, which inherit the culture of various nationalities. Now there are approximately 6900 languages spoken on Earth, and half of the world’s population regards one of the following ten languages as their native language: Mandarin, Spanish, English, Hindi, Arabic, Bengali, Portuguese, Russian, Punjabi, and Japanese. Chinese has more native speakers than any other language, followed by Spanish and English. Hindi comes next with 329 million native speakers. Arabic is used by nearly 50 million more native speakers than Bengali.
+ 
+Figure 1: The distribution of language
+Languages will evolve and diversify over time, and the history of their evolution can be reconstructed by a variety of influences. 
+Recently, in the progress of globalization, which has had a dramatic impact on education and the way people learn languages, much of the world’s population also speaks a second language. As a result, when considering total numbers of speakers of a particular language, their ranking changes 
+ 
+Figure 2: Learners of each language over the world
+
+
+1.2	 Restatement of the Problem 
+The problem assumes that an influential multinational corporation proposes to expand its global market, opening additional international offices besides New York and Shanghai. Moreover, it needs to employ staff who can speak both in English and one or more additional languages. The problem requires us to investigate trends of global languages and location options, so as to help making market expansion strategy.
+The problem can be devided into four parts: 
+Firstly, identify the trends of global languages, including:
+	Incorporate influences and factors described in the background to model the distribution of various language speakers over time. 
+	Predict the numbers of native speakers and total language speakers in the next 50 years and possible change with the Top-10 List.
+	Describe the possible change about geographic distributions of these languages over this same period of time 
+Secondly, develop the market expansion strategy, including:
+	Recommend the location of six new international offices and languages spoken in the offices. 
+	Analyze whether it is sensible to open less than six offices, for the sake of save our client company resources 
+Lastly, write a memo to the service company about our results and recommendations. 
+2	Assumptions and Nomenclature 
+2.1	 General Assumptions 
+	The policy of related countries won’t change sharply in the following 50 years. For example, the government will not change the official language of the country, and will not ban immigration from other ethics as well.
+	The data of the principal several countries where people speak certain language can substitute the data of that language. For instance, Spain and Argentina can represent Spanish, and the United States and United Kingdom can represent English.
+	The offices are chosen in different countries. As a result, when we choose the location for new office, Chinese or American cities other than New York and Shanghai will not be considered.
+	The offices are opened one by one in sequence of our evaluation index. So we will reduce the number of offices only when the sixth office’s cost is above the average. 
+
+
+2.2 Nomenclature 
+ 
+3 Analyze numeral trends of global languages 
+3.1 Influences about the number of speakers 
+We should consider a number of influences when modeling the distribution of various language speakers over time, such as the population of the countries that regard the language as the official language, economic development level, social media, the use of technology, and so on. 
+After referring to the data from reliable organization like UN, IMF, and OECD, we discover that statistics are usually calculated by country instead of language. To illustrate, GDP per capita among people who speak English is difficult to acquire, but GDP per capita in United States is open to public. As a result, we use the data of the principal several countries where people speak the language to substitute the data of that language. For instance, Spain and Argentina can represent Spanish, and the United States and United Kingdom can represent English.
+Considering the feasibility of data and practical meaning of different influences, we use the following four factors to construct our model: GDP per capita, population of a language’s the main several countries, internet users, and international tourism arrivals.
+
+ 
+Figure 3: Four influential factors of the number of global languages
+Next, we will design a series of models in order to predict:
+(1) The future trend of the four factors.
+(2) The number of native speakers and total language speakers in the next 50 years.
+3.2 Logistic Model
+3.2.1 Construction of model
+After literature review, we try several models that can predict indicators about population. Among them, Logistic Population Model is relatively more applicable to estimate population of the countries and internet users. It assumes the carrying capacity  , which is the maximum population of an ecology and stays constant. If the population is above  , the population will decrease, vice versa. 
+Suppose   is the number of population, such as population of the main several countries and internet users;   is the initial population growth rate; The rate of change   is proportional to the product of   and  .
+ , 
+Separate the variables and integrate on both sides,
+ 
+Then, combine the two sides,
+ 
+Knowing that the initial value , we get 
+ 
+3.2.2 Simulation of model 
+We apply Logistic Model to predict two of our factors: internet users of a language and population of the principal countries who use the language. We collect data of the past 20 years (1997~2016), and forecast the data of next 50 years (2017-2067) .
+
+ 
+ 
+Figure 4: Population of internet users and principal countries
+3.3 Auto Regressive Model
+3.3.1 Construction of model
+Time series models with correlation can be built out of white noise. The simplest correlated stationary processes are autoregressive processes, where Yt is modeled as a weighted average of past observations plus a white noise ‘error’.
+AR (1) processes is the simplest autoregressive processes.
+Let   be  . We say that   is an   process if for some constant parameters   and  ,
+ 
+for all  . The parameter   is the mean of the process. 
+To get a more flexible class of models, we can use a model that regresses the current value of the process on several of the recent past values, not just the most recent. Thus, we let the last  values of the process,   feed back into the current value  .
+The stochastic process   is an   process if 
+ 
+In our model,   is chosen as 1, 2, or 3 according to disparate countries.
+We use MATLAB to estimate the value of parameters. To check for residual autocorrelation, one can use the test bounds of ACF plots. Any residual ACF value outside the test bounds is significantly from 0 at the 0.05 level. 
+
+3.3.2 Simulation of model 
+We apply Auto Regressive Model to predict another two factors: tourism arrivals and GDP per capita. Similarly, we collect data of the past 20 years (1997~2016), and predict the data of next 50 years (2017-2067). The results are show in the graphs below.
+ 
+Figure 5: Tourism arrivals
+ 
+Figure 6: GDP per capita
+Next, with the future data of four factors, we will predict what will happen to the numbers of native speakers and total language speakers in the next 50 years. 
+3.4 BP Neural Network Model
+3.4.1Construction of model
+Neural Network is an important data mining tool used for classification and clustering. Its mechanism is just like its name, which means it mimics brain activities and is able to learn through continual attempts. If neural network is supplied with enough examples, it will be able to perform classification and discover new trends or patterns in data, thus we can get the predictable data based on the trends.
+In our model, GDP per capita, population, internet users and international tourism arrivals are inputs, and the numbers of native speakers and total speakers are outputs. 
+ 
+Figure 7: Neural network model
+We use back propagation algorithm to compute the neural network. Back propagation is a method used in artificial neural networks to calculate a gradient that is needed in the calculation of the weights needed in the network. 
+We follow the following steps to construct BP Neural Network Model:
+	One of the sample cases is applied to the network, and the network produces some output based on the current state of its synaptic weights (initially, the output will be random).
+	This output is compared to the known-good output, and a mean-squared error signal is calculated.
+	The error value is then propagated backwards through the network, and small changes are made to the weights in each layer.
+	The weight changes are calculated to reduce the error signal for the case in question.
+	The whole process is repeated for each of the example cases, then back to the first case again, and so on.
+ 
+Figure 8: Flow chart of BP Neural Network
+The cycle is repeated until the overall error value drops below some pre-determined threshold. At this point we say that the network has learned the problem "well enough" - the network will never exactly learn the ideal function, but rather it will asymptotically approach the ideal function.
+3.4.2 Prediction of the numbers of language speakers
+Now that we have predict the future value of 4 factors, we use them as the inputs of our BP Neural Network. According to the existing data of current number of languages (some from the question background information, others from press search), we altogether obtain 28 groups of data. We leave 5 groups of data as testing samples, and other 23 groups of data as training samples. After training our model, we input future data of the four factors, and figure out the numbers of native speakers and total language speakers over the next 50 years. Here we will illustrate the number of English and Chinese speakers over time in the graphs below. 
+ 
+Figure 9: Number of English and Chinese speakers over time
+Then, we use BP Neural Network to calculate out the number of various language speakers over time. On the whole, there seems not much difference between ranking lists in 2017 and ranking lists in 2067, especially the ranking among the top 5 languages; however, we find some of the languages (both native speakers and total speakers) will be replaced by another language. 
+ 
+Figure 10: Ranking of total language speakers and native language speakers
+Firstly, in the ranking list of total speakers, the number of German speakers will increase sharply, and German, which is not in the top-10 list, will become the No. 6. Germany is the most influential country in the European Union. Perhaps with its closer relationship with the global economy, the status of German will promote and more people will be willing to learn German.
+Besides, Persian will have the similar pattern that changes from No.15 to No.8. On the contrary, Portuguese and Bengali will be replaced and get out of the top-10 list.
+Secondly, in the number of native speakers ranking list, there seems to a boom in German and Persian, and a recession of Portuguese as well. Besides, Spanish will replace English as the No.2 language, and Arabic will drop out of top-5 language.
+4Analyze geographic trends of global languages
+In this part, we investigate the global population and human migration patterns and analyze the possible changes concerning the geographic distributions of these languages change over the next 50 years. 
+4.1Immigrants and emigrants of global languages
+Since we can only get access to the number of immigrants or emigrants of a country, we here discuss about the people spoken certain language migrates from one country to another. Primary countries whose native languages are ranked in the top-15 list will be discussed here, including the United States, China, the United Kingdom, Brazil, Spain, Iran, India, Pakistan, Bangladesh, Japan, France, Germany, Russia, Argentina, Malaysia, and Saudi Arabia.
+We acquire the statistics of net number of migrants from the World Population Prospects 2017, which is published by the United Nations. Then, we figure out the emigration and immigration rate of each country. Five countries have negative immigration rate, which means there are more emigrants than immigrants while other 11 countries have positive immigration rate. 
+ 
+Figure 11: Countries with different immigration rate
+4.2 Migration Pattern Model
+We construct a Migration Pattern Model to estimate the number of speakers of a language who immigrant from country A to country B. To simplify the question, we only consider about condition that the native speakers in countries with negative immigration rate (5 countries mentioned above) migrates to countries with positive immigration rate (11 countries motioned above) over the next 50 years.
+Suppose  are the 5 countries with negative immigration rate;   
+are the 11 countries with positive immigration rate. 
+  are the population of these countries;   is emigration rate of native speakers in country
+  is emigration rate of native speakers in country ;
+ is the total immigrants to country   divided by global immigrants. We use it to estimate the proportion of immigrants from   that choose   as their target destination, instead of other countries.
+As a result, the net number of native speakers migrates from   to  is: 
+ 
+4.3 Changes of Geographic Distributions 
+We use the human migration statistics from the United Nations to forecast the geographic migration pattern. By calculation the number of immigrants from 5 countries with negative immigration rate (China, Iran, India, Pakistan, Bangladesh) to countries with positive immigration rate (the United States, the United Kingdom, Brazil, Spain, Japan, France, Germany, Russia, Argentina, Malaysia, and Saudi Arabia), we can infer some changes about geographic distributions. 
+ 
+Figure 12: Number of immigrants from China to other countries in 50 years
+For example, China is the most important developing countries where people emigrate more than immigrate. From Figure 12, Chinese people prefer to choose the United States, Russia, and Brazil as their destination. According to our rough estimation, during the next 50 years, altogether 1.14 million people who speak Chinese will immigrate from China to these three countries.
+ 
+Figure 13: Number of immigrates from other countries to the United States in 50 years
+From another perspective, the United States is the most important developed countries and American people immigrate more than emigrate. As is shown is graph, among the five emigration country discussed, native India and China are the most important source of immigration. Based on our model, 1.79 million India and Chinese people who speak their mother language will become residents of the United States.
+In this chapter, we only discuss about the changes with geographic distributions of these languages among 11 countries, whose native languages are ranked in the top-15 list. Actually, our model is also applicable if we obtain the statistics of more countries.
+5 Location of the new offices
+5.1 Evaluation Index and influential factors
+In this part, we will offer recommendations about the locations of the new offices and the languages spoken there, based on to quantitative analysis. We define Opportunity Index to evaluate the ability of the new office in a city to make profit, expand the market, and keep growing. 
+Then, we include 8 factors to calculate the Opportunity Index, and they all have positive correlation with Opportunity Index. As is shown in the graph, factors on the left side of the graph are also employed in previous models, and we have already predicted their number in the long term. 
+ 
+Figure 14: Influential factors of Opportunity Index
+Factors on the right side of the graph are especially considered for the site selection problem, and we can acquire their data from “The Global Competitiveness Report 2016–2017”, published by Word Economic Forum. Here are some basic explanations of them:
+	Quality of Overall Infrastructure: the quality (extensiveness and condition) of transport infrastructure for roads. [1 = extremely underdeveloped—among the worst in the world; 7 = extensive and efficient—among the best in the world].
+	High Education and Training: assess the quality of education and training. [1 = extremely poor; 7 = excellent].
+	Labor Market Efficiency: assess the efficiency of labors. [1 = extremely poor; 7 = excellent].
+
