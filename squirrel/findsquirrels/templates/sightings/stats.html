@@ -1,43 +1,60 @@
 <!doctype html>
-<html>
-	<head>
-    <title>General stats about the sightings</title>
-    </head>
-
-	<body>
-		In the project, we work on keeping track of 3023 known squirrels in the Central Park. The data is acquired from 2018 Central Park Squirrel Census, including location coordinates, age, primary and secondary fur color, elevation, activities, communications, and interactions between squirrels and with humans. 	
+<html lang="en">
+  <body>
+  
+		<h1>Statistical Analysis </h1>
 		<br/>
-		<h1>How are the squirrels look like? </h1>
-		85% of the squirrels are adult, and 11% are juvenile. Others unknown.
-		<img src="sightings/age.png" width="400" height="200" />	
+		In the project, we work on keeping track of 3023 known squirrels in the Central Park. The data is acquired from 2018 Central Park Squirrel Census, including location coordinates, age, primary and secondary fur color, elevation, activities, communications, and interactions between squirrels and with humans.
+		<br/> 	
+		<br/>
+		<img src="https://cdn.mos.cms.futurecdn.net/m33Pou2DHPmjSvVGVX6sRH-970-80.jpg" width="500" height="300" />			
+		<br/>
+		<h2>How does the squirrels look like? </h2>
 		
+		<h3>Age distribution</h3>
+		{{sightings_adult}} Adults {{percent_adult}}% of total
+        <br/>
+        {{sightings_juvenile}} Juvenile {{percent_juvenile}}% of total		
+        <br/>
+		<img src="https://c1.staticflickr.com/9/8048/8366431255_04c26e1f0e_h.jpg" width="500" height="300" />
+		
+        
+		
+		<h3>Color Distribution</h3>
+		{{black}} black, {{cinnamon}} cinnamon, {{gray}} gray
 		<br/>
 		Altogether 18 types of combination of primary and highlight fur colors is under consideration. More than half of squirrels have a primary color of gray. 25% of squirrels are grey with Cinnamon highlights.
 		<br/>	
 		There are some interesting colors of fur feather, such as white further with black highlight. Look like a panda? 
-		
-		<img src="sightings/color.png" width="800" height="600" />
+		<br/>
+		<img src="https://raw.githubusercontent.com/sherrychenxuan/squirrel_tools/master/squirrel/findsquirrels/templates/sightings/color.png" width="500" height="500" />
 		 		
-		<h1>What are the squirrels doing most of time?</h1>
+		<h2>What are the squirrels doing most of time?</h2>
+		<h3>Behavior Analysis</h3>
+		{{running}}running , {{chasing}}chasing, {{climbing}} climbing, {{eating}} eating, {{foraging}} foraging.
 		Through the behavior analysis of sightings, we can imagine the typical day of a squirrel. We analyze 5 attributes in the dataset: running, chasing, climbing, eating, and foraging.
 		<br/>
 		47.5% of squirrels were seen foraging. 25% were seen eating. Perhaps squirrel's life is focused on food. 
-		
-		<img src="sightings/motion1.png" width="800" height="600" />
-		<Br/>
-		200 of the squirrels were possibly doing nothing. And several squirrels were seen running, chasing, climbing, and eating at the same time.
-		
-		<img src="sightings/motion2.png" width="800" height="600" />
+		<br/>
+		<img src="https://raw.githubusercontent.com/sherrychenxuan/squirrel_tools/master/squirrel/findsquirrels/templates/sightings/motion1.png" width="600" height="450" />
 		
 		
-		<h1>Behavior Analysis of squirrel</h1>
+		<br/>
+		200 of the squirrels were possibly doing nothing. Several squirrels were seen running, chasing, climbing, and eating at the same time.
+		<br/>
+		
+		<img src="https://raw.githubusercontent.com/sherrychenxuan/squirrel_tools/master/squirrel/findsquirrels/templates/sightings/motion2.png" width="600" height="450" />
+		
+		<br/>
+		<h3>Shifting time</h3>
+		{{am}} squirrels were seen shifting in the morning, and {{pm}} in the afternoon.
 		In comparision, squirrels are more active in the afternoon.
+		<br/>
 		
-		<img src="sightings/shift.png" width="800" height="600" />
-		
-			
+		<img src="https://raw.githubusercontent.com/sherrychenxuan/squirrel_tools/master/squirrel/findsquirrels/templates/sightings/shift.png" width="600" height="400" />
 
-	</body>
+		<a href="/findsquirrels/sightings">Go back to sightings.</a>
+  </body>
+
+
 </html>
-
-
