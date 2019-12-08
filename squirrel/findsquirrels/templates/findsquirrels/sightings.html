@@ -1,6 +1,8 @@
 <!doctype html>
 <ul>
-	<a href = add>CLICK ME TO ADD NEW SQUIRREL</a>
+	
+	<h1>Squirrel List</h1>
+	<a href = add>ADD NEW SQUIRREL</a>
 	{% for squirrel in squirrels %}
 	<li><a href = {{squirrel.unique_squirrel_id}}>{{squirrel.unique_squirrel_id}}</a></li>
 	{% endfor %}
