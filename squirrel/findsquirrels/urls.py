@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'findsquirrels'
+
 urlpatterns = [
 	path('map/',views.select_samples),
  	path('sightings/stats',views.stats),
