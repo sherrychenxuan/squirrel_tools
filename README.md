@@ -6,6 +6,8 @@
 
 # Squirrel Tracker: Keeping Track of 2018 Central Park Squirrel
 
+-----------------
+
 ## Description
 This web application **squirrel** allow users to add, update and view squirrel data. Users can view the location of the squirrel sightings on our map. Data source is from <a href='https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw'>NYC Open Data: 2018 Central Park Squirrel Census - Squirrel Data</a>
 Users can import the 2018 Central Park Squirrel Census data by using the command:
