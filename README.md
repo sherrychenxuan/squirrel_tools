@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/D6E6/production/_109241055_mediaitem109241054.jpg" width = "488" height = "375">
+  <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/D6E6/production/_109241055_mediaitem109241054.jpg" width = "651" height = "500">
 </div>
 
 -----------------
