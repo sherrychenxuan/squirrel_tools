@@ -19,7 +19,7 @@ class Squirrel(models.Model):
     unique_squirrel_id = models.CharField(
             help_text = _('Identification tag for each squirrel sightings'),
             max_length = 30,
-            primary_key = True
+            primary_key = True,
     )
 
    # hectare = models.CharField(
@@ -27,28 +27,48 @@ class Squirrel(models.Model):
    #         max_length = 5,
    # )
 
+    PM='PM'
+    AM='AM'
+    shift_choices=(
+            (PM,'PM'),
+            (AM,'AM'),)
     shift = models.CharField(
             help_text = _('sighting morning or afternoon'),
             max_length = 5,
+            choices=shift_choices,
+            blank = True,
     )
 
     date = models.CharField(
             help_text = _('sighting day and month'),
             max_length = 10,
+            blank = True,
     )
 
    # hectare_squirrel_number = models.IntegerField(
    #         help_text = _('number of squirrel sightings'),
    # )
 
+    Adult='Adult'
+    Juvenile='Juvenile'
+    age_choices=((Adult,'Adult'),(Juvenile,'Juvenile'))
     age = models.CharField(
             help_text = _('adult or juvenile'),
             max_length = 10,
+            choices = age_choices,
+            blank = True,
     )
 
+    Gray='Gray'
+    Cinnamon='Cinnamon'
+    Black='Black'
+    color_choices=((Gray,'Gray'), (Cinnamon,'Cinnamon'),
+    (Black,'Black'))
     primary_fur_color = models.CharField(
             max_length = 20,
-            help_text = _('Gray,Cinnamon or Black')
+            help_text = _('Gray,Cinnamon or Black'),
+            choices = color_choices,
+            blank = True,
     )
 
    # highlight_fur_color = models.CharField(
@@ -64,9 +84,15 @@ class Squirrel(models.Model):
    #         max_length = 100,
    # )
 
+    Ground_Plane='Ground_Plane'
+    Above_Ground='Above_Ground'
+    Other='Other'
+    location_choices=( (Ground_Plane,'Ground_Plane'), (Above_Ground,'Above_Ground'))
     location = models.CharField(
             max_length = 20,
-            help_text = _('Ground Plane or Above Ground')
+            help_text = _('Ground Plane or Above Ground'),
+            choices = location_choices,
+            blank = True,
     )
 
    # above_ground_sighter = models.CharField(
@@ -75,7 +101,8 @@ class Squirrel(models.Model):
 
     specific_location = models.CharField(
             max_length = 100,
-            help_text = _('your commentary')
+            help_text = _('your commentary'),
+            blank = True
     )
 
     running = models.BooleanField()
@@ -90,6 +117,7 @@ class Squirrel(models.Model):
 
     other_activities = models.CharField(
             max_length = 50,
+            blank = True,
     )
 
     kuks = models.BooleanField()

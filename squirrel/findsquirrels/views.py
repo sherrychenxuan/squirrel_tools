@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Squirrel
 from .forms import SquirrelForm
@@ -71,9 +71,10 @@ def add_squirrel(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(f'/findsquirrels/sightings')
+            return redirect(f'/sightings')
     else:
         form = SquirrelForm()
+
 
     context = {
             'form':form,
@@ -88,7 +89,13 @@ def edit_squirrel(request,unique_squirrel_id):
         form = SquirrelForm(request.POST, instance=squirrel)
         if form.is_valid():
             form.save()
-            return HttpResponse(f'Updated squirrel {unique_squirrel_id}')
+            text_response = f'''
+            <!doctype html>
+            <html>
+            Updated squirrel {unique_squirrel_id}.<a href = '/sightings'>Go back to sightings</a>
+            </html>
+            '''
+            return HttpResponse(text_response)
     else:
         form = SquirrelForm(instance=squirrel)
 
