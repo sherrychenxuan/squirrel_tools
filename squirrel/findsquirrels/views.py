@@ -78,7 +78,7 @@ def add_squirrel(request):
             </html>
             '''
             return HttpResponse(text_response)
-           # return redirect(f'/sightings')
+
     else:
         form = SquirrelForm()
 
