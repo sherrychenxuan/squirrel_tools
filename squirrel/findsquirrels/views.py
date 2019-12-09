@@ -71,7 +71,14 @@ def add_squirrel(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings')
+            text_response = f'''
+            <!doctype html>
+            <html>
+            Added squirrel Successfully. <a href = '/sightings'>Go back to sightings</a>
+            </html>
+            '''
+            return HttpResponse(text_response)
+           # return redirect(f'/sightings')
     else:
         form = SquirrelForm()
 
@@ -92,7 +99,7 @@ def edit_squirrel(request,unique_squirrel_id):
             text_response = f'''
             <!doctype html>
             <html>
-            Updated squirrel {unique_squirrel_id}.<a href = '/sightings'>Go back to sightings</a>
+            Updated squirrel {unique_squirrel_id}. <a href = '/sightings'>Go back to sightings</a>
             </html>
             '''
             return HttpResponse(text_response)
