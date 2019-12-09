@@ -44,10 +44,16 @@
 <body>
 <a name="top"></a>
 <ul>
+<<<<<<< HEAD
 	<p> Click the following link to add a new sightings.</p>
 	<p><a href = add>CLICK ME TO ADD NEW SQUIRREL</a></p>
         <p>Please click arrows to see details of each squirrel.(It might be slow.)</p>
 	<p>Please click unique id to edit and update sightings.</p>
+=======
+	
+	<h1>Squirrel List</h1>
+	<a href = add>ADD NEW SQUIRREL</a>
+>>>>>>> 17d370ddd1d17e9c27c7986e0198756bf2628083
 	{% for squirrel in squirrels %}
 	<button class="accordion">
 	<a href = {{squirrel.unique_squirrel_id}}>{{squirrel.unique_squirrel_id}}</a>

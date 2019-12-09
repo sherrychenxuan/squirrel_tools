@@ -52,7 +52,7 @@ def stats(request):
 
 def select_samples(request):	
 	squirrels = Squirrel.objects.all()
-	sightings = squirrels[0:50]
+	sightings = squirrels[0:100]
 	context = {
 		'sightings': sightings,
 	}
