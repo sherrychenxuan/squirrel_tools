@@ -1,9 +1,35 @@
-<!doctype html>
-<ul>
-	
-	<h1>Squirrel List</h1>
-	<a href = add>ADD NEW SQUIRREL</a>
+
+
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>Find the squirrel</title> 
+</head>
+<body>
+ 
+<div id="container" style="width:2000px">
+ 
+<div id="header" style="background-color:#3987BB;">
+<h1 style="margin-bottom:0;">Squirrel List</h1></div>
+ 
+<div id="menu" style="background-color:#BAD9EE;height:1000px;width:500px;float:left;">
+<b>Home</b><br>
+<a href = add>ADD NEW SQUIRREL</a><br>
+<a href = /map/>SEE THE MAP</a><br>
+<a href = stats>GENERAL STATISTICS</a></div>
+ 
+<div id="content" style="background-color:#EEEEEE;height:200px;width:300px;float:left;">
+	<img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1772,w_3154,x_0,y_198/f_auto,q_auto,w_1100/v1561474968/shape/mentalfloss/istock-699473672.jpg" width="700" height="400" />	
 	{% for squirrel in squirrels %}
 	<li><a href = {{squirrel.unique_squirrel_id}}>{{squirrel.unique_squirrel_id}}</a></li>
 	{% endfor %}
-</ul>
+	</div>
+ 
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+PROJECT FOR COURSE TOOLS FOR ANALYTICS</div>
+ 
+</div>
+ 
+</body>
+</html>
