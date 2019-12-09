@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 15%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
+.active, .accordion:hover {
+  background-color: #ccc;
+}
 
+.accordion:after {
+  content: '\e080';
+  font-family: 'Glyphicons Halflings';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
 
+.active:after {
+  content: "\e114";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
 <body>
+
+
 <a name="top"></a>
 
- 
 <div id="header" style="background——color:#1B77B4">
-<h1 style="margin-bottom:0;">Squirrel List</h1></div>
-<b>
-<a href = add>ADD NEW SQUIRREL</a><br>
-<a href = /map/>SEE THE MAP</a><br>
-<a href = stats>GENERAL STATISTICS</a><br>
+	<h1 style="margin-bottom:0;">Squirrel List</h1><br><br></div>
+<a href = add>ADD NEW SQUIRREL</a><br><br>
+<a href = /map/>SEE THE MAP</a><br><br>
+<a href = stats>GENERAL STATISTICS</a><br><br>
+<p>Click the accordion arrow to view squirrel details. It might be slow, Please wait.</p>
+<p>Click unique squirrel id to edit and update each sighting.</p><br>
 
- 
-<div id="content" style="background-color:#EEEEEE;height:2500000px;width:700px;float:left;">
-	<img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1772,w_3154,x_0,y_198/f_auto,q_auto,w_1100/v1561474968/shape/mentalfloss/istock-699473672.jpg" width="700" height="400" />	
 	{% for squirrel in squirrels %}
 	<button class="accordion">
 	<a href = {{squirrel.unique_squirrel_id}}>{{squirrel.unique_squirrel_id}}</a>
@@ -46,11 +84,31 @@
 			<li>Approaches: {{squirrel.approaches}}</li>
 			<li>Indifferent: {{squirrel.indifferent}}</li>
 			<li>Runs From: {{squirrel.runs_from}}</li>
+		</ul>
 		</p>
 	</div>
 	{% endfor %}
-</div>
- 
 
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<a href="#top" title='Back to top'>Back to top</a>
+
+</body>
+</html>
 
 
