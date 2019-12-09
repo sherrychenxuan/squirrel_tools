@@ -49,10 +49,19 @@
         <!-- L.Icon.Default.prototype.options.iconAnchor = [0, 0]; -->
         <!-- L.Icon.Default.prototype.options.shadowSize = 15; -->
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
+        <!-- change icon type -->
+		var SquirrelIcon = new L.Icon({
+		iconUrl: 'http://icons.iconarchive.com/icons/martin-berube/flat-animal/256/squirrel-icon.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 25],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [30, 30]
+});        
         {% for sighting in sightings %}
           var point_lat_lon = [{{ sighting.y }}, {{ sighting.x }}];
-          var marker = L.marker(point_lat_lon).addTo(map)
-          .bindPopup("{{sighting.unique_squirrel_id}} <br> {{sighting.age}} <br> 	{{sighting.primary_fur_color}}")
+          var marker = L.marker(point_lat_lon,{icon:SquirrelIcon}).addTo(map)
+          .bindPopup("I am a cute squirrel <br> {{sighting.unique_squirrel_id}} <br> {{sighting.age}} <br> 	{{sighting.primary_fur_color}}")
 		  .openPopup();
         {% endfor %}
     </script>
