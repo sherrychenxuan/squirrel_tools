@@ -15,7 +15,7 @@ Users can import the 2018 Central Park Squirrel Census data by using the command
 python manage.py import_squirrel_data /path/to/file.csv
 ```
 
-Also, users can export the data in csv format with this command:
+Besides, users can export the data in csv format with this command:
 ```sh
 python manage.py export_squirrel_data /path/to/file.csv
 ```
