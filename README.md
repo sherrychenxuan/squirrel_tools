@@ -48,8 +48,8 @@ python manage.py export_squirrel_data /path/to/file.csv
 
 ## Group Information
 Project Group 54 in the course Tools for Analytics(Group Name: 23:59)
-  - Qianyu Hu qh2218
-  - Xuan Chen xc2522
+  - Qianyu Hu [qh2218]
+  - Xuan Chen [xc2522]
 
 From Section 2
 
