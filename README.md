@@ -55,7 +55,7 @@ UNIs:[qh2218, xc2522]
 
 ## Link to Server Running Our App
 
-Uers can visit our website through https://virtual-dogfish-253823.appspot.com/sightings/
+Users can visit our website through https://virtual-dogfish-253823.appspot.com/sightings/
 
 and https://virtual-dogfish-253823.appspot.com/map/
 
